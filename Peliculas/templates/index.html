@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado - Catálogo de Películas{% endblock %}
+
+{% block content %}
+    <h2>Listado de Películas</h2>
+    <ul>
+        {% for movie in movies %}
+            <li>
+                <a href="{% url 'peliculas:movie_detail' movie.pk %}">
+                    {{ movie.title }} - {{ movie.release_year }}
+                </a>
+            </li>
+        {% empty %}
+            <li>No hay películas registradas en este momento.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

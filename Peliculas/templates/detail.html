@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle: {{ movie.title }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <h1>{{ movie.title }}</h1>
+        <p><strong>ID de la película:</strong> {{ movie.id }}</p> 
+        <p><strong>Género:</strong> {{ movie.genre }}</p>
+        <p><strong>Director:</strong> {{ movie.director }}</p>
+        <p><strong>Año de Publicación:</strong> {{ movie.release_year }}</p>
+        <p><strong>Sinopsis:</strong></p>
+        <p>{{ movie.synopsis }}</p>
+        
+        <a class="back-link" href="{% url 'peliculas:movie_list' %}">← Volver al listado</a>
+    </div>
+{% endblock %}
